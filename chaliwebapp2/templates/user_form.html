@@ -1,0 +1,48 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create User Profile</title>
+</head>
+<body>
+    <h1>Create User Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Render first_name field -->
+        <div>
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+            {{ form.first_name.errors }}
+        </div>
+
+        <!-- Render last_name field -->
+        <div>
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+            {{ form.last_name.errors }}
+        </div>
+
+        <!-- Render phone_number field -->
+        <div>
+            {{ form.phonenumber.label_tag }}
+            {{ form.phonenumber }}
+            {{ form.phonenumber.errors }}
+        </div>
+
+        <!-- Render email field -->
+        <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
